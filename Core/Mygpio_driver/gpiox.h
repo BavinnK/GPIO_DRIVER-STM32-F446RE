@@ -37,4 +37,6 @@ typedef struct {
 
 void gpio_init(GPIO_TypeDef *port, gpio_set_up *ptr);
 static inline void port_init(GPIO_TypeDef *ptr);
+void gpio_set(GPIO_TypeDef *port,uint8_t pin);
+void gpio_reset(GPIO_TypeDef *port,uint8_t pin);
 #endif

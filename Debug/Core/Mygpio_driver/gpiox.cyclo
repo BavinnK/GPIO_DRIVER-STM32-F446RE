@@ -1,2 +1,4 @@
-../Core/Mygpio_driver/gpiox.c:5:20:port_init	4
-../Core/Mygpio_driver/gpiox.c:10:6:gpio_init	1
+../Core/Mygpio_driver/gpiox.c:3:20:port_init	4
+../Core/Mygpio_driver/gpiox.c:11:6:gpio_init	1
+../Core/Mygpio_driver/gpiox.c:19:6:gpio_set	1
+../Core/Mygpio_driver/gpiox.c:23:6:gpio_reset	1

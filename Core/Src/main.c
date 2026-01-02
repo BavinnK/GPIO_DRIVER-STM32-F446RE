@@ -88,8 +88,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  gpio_set_up config;
+  	 gpio_set_up config;
+    config.MODERx=GPIOx_MODER_OUTPUT;
+    config.OSPEEDRx=GPIOx_OSPEEDR_MED_SP;
+    config.OTYPERx=GPIOx_OTYPER_PP;
+    config.PINx=5;
+    config.PUPDRx=GPIOx_PUPDR_NONE;
 
+    gpio_init(GPIOA, &config);
 
   /* USER CODE END 2 */
 
@@ -98,7 +104,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  gpio_set(GPIOA, 5);
+	  	  for(int i=0;i<10000000;i++);
+	  	  gpio_reset(GPIOA, 5);
+	  	  for(int i=0;i<10000000;i++);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

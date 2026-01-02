@@ -34,7 +34,7 @@ typedef struct {
 	gpio_speed_t OSPEEDRx;
 	gpio_pull_t PUPDRx;
 } gpio_set_up;
-static inline void port_init(GPIO_TypeDef *ptr);
+
 void gpio_init(GPIO_TypeDef *port, gpio_set_up *ptr);
 
 void gpio_set(GPIO_TypeDef *port,uint8_t pin);

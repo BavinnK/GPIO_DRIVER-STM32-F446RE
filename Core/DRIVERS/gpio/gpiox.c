@@ -1,4 +1,4 @@
-#include "gpiox.h"
+#include "../gpio/gpiox.h"
 
 static inline void port_init(GPIO_TypeDef *ptr) {
 	if (ptr == GPIOA)

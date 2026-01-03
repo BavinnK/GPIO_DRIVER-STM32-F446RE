@@ -51,11 +51,6 @@ void adc_init(ADC_TypeDef *adc_port,adc_config_t *ptr) {
 	gpio_init(port, &config);
 	adc_setuo(adc_port);
 
-
-
-
-
-
 	// Enable ADCx
 	adc_port->CR2 |= (1 << 0);
 
@@ -72,9 +67,7 @@ uint16_t adc_read(ADC_TypeDef *adc_port,uint8_t channel) {
 	// Clear SQ1 (we use only one conversion)
 	adc_port->SQR3 &= ~(0b11111);
 
-	// Select channel:
-	// channel 0 -> PA0 (LM35)
-	// channel 1 -> PA1 (pot)
+
 	adc_port->SQR3 |= channel;
 
 	// Start conversion by software

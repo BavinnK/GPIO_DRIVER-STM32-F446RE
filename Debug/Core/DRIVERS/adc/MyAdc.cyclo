@@ -1,4 +1,4 @@
 ../Core/DRIVERS/adc/MyAdc.c:3:29:channel_setup	6
 ../Core/DRIVERS/adc/MyAdc.c:17:20:adc_setuo	4
 ../Core/DRIVERS/adc/MyAdc.c:42:6:adc_init	3
-../Core/DRIVERS/adc/MyAdc.c:70:10:adc_read	2
+../Core/DRIVERS/adc/MyAdc.c:65:10:adc_read	2

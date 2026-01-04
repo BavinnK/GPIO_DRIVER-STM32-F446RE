@@ -4,22 +4,56 @@
 #define TOP_VAL 0xFFFF
 volatile uint32_t start_time = 0, end_time = 0, diffrence = 0;
 volatile uint8_t is_first_cap = 0;
+static inline void port_init(GPIO_TypeDef *ptr){
+	if(ptr==GPIOA){
+			RCC->AHB1ENR|=(1<<0);//enable GPIOA
+		}
+		else if(ptr==GPIOB){
+			RCC->AHB1ENR|=(1<<1);//enable GPIOB
+		}
+		else if(ptr==GPIOC){
+			RCC->AHB1ENR|=(1<<2);//enable GPIOC
+		}
+		else{
+			while(1);//error
+		}
+}
+static inline void AFR_init(GPIO_TypeDef *ptr,uint8_t echo_pin){
+	if(echo_pin>=0&&echo_pin<=7){
+		ptr->AFR[0]&=~((0b1111<<(echo_pin*4)));//clear the bits first
+		ptr->AFR[0]|=(1<<echo_pin*4);
+	}
+	else if(echo_pin>=8&&echo_pin<=15){
+		ptr->AFR[1]&=~((0b1111<<((echo_pin-8)*4)));//clear the bits first. you may think why we -8 the ehco pin cuz the high part of AFR reg starts from 0
+		ptr->AFR[1]|=(1<<((echo_pin-8)*4));
+	}
+	else {
+		while(1);//error  handler
+	}
+}
+void hcsr04_init(GPIO_TypeDef *trig_port,GPIO_TypeDef *echo_port,uint8_t trig_pin,uint8_t echo_pin) {
+	//trigger pin config
+	port_init(trig_port);
+	gpio_set_up trig_config;
+	trig_config.PINx=trig_pin;
+	trig_config.MODERx=GPIOx_MODER_OUTPUT;
+	trig_config.OSPEEDRx=GPIOx_OSPEEDR_FAST_SP;
+	trig_config.OTYPERx=GPIOx_OTYPER_PP;
+	trig_config.PUPDRx=GPIOx_PUPDR_NONE;
+	gpio_init(trig_port, &trig_config);
+	//trig config done
 
-void hcsr04_init(void) {
-	//PA10 for trig and PA8 for echo
-	RCC->AHB1ENR |= (0b1);
-	RCC->APB2ENR |= (0b1);
-	//configuring triger pin PA10 for output
-	GPIOA->MODER &= ~(( 0b11 << 2*10 ));
-	GPIOA->MODER |= ((1 << 20));
-	GPIOA->OTYPER &= ~(1 << 10);    //reset state
-	GPIOA->PUPDR &= ~(0b11<<2*10);    //disable push pull resistor
 
-	//configuring echo pin PA8
-	GPIOA->MODER &= ~((1 << 17) | (1 << 16));
-	GPIOA->MODER |= ((1 << 17));
-	GPIOA->AFR[1] &= ~((1 << 3) | (1 << 2) | (1 << 1) | (1 << 0));
-	GPIOA->AFR[1] |= (1 << 0);
+	// echo pin config
+	port_init(echo_port);
+	gpio_set_up echo_config;
+	echo_config.PINx=echo_pin;
+	echo_config.MODERx=GPIOx_MODER_AF;
+	echo_config.OSPEEDRx=GPIOx_OSPEEDR_HIGH_SP;
+	echo_config.OTYPERx=GPIOx_OTYPER_PP;
+	echo_config.PUPDRx=GPIOx_PUPDR_NONE;
+	gpio_init(echo_port, &echo_config);
+	AFR_init(echo_port, echo_pin);
 
 	//TIMER 1 conifuration
 	//we will set the freq of the timer to 1Mhz so each tick is 1us
@@ -73,10 +107,11 @@ void delay_us_hc(uint32_t us) {
 		__asm__("nop");
 	}
 }
-void hcsr04_trig_hc(void) {
-	GPIOA->BSRR = (1 << 10);			//HIGH
+void hcsr04_trig_hc(GPIO_TypeDef *trig_port,uint8_t pin) {
+
+	gpio_set(trig_port, pin);//HIGH
 	delay_us_hc(10);						//small delay
-	GPIOA->BSRR = (1 << 26);		//LOW
+	gpio_reset(trig_port, pin);//LOW
 }
 uint32_t  hcsr04_get_pulse_width(void){
 	return diffrence;

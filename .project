@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>gpio_dri_stm32</name>
+	<name>STM32_f446re_drivers</name>
 	<comment></comment>
 	<projects>
 	</projects>

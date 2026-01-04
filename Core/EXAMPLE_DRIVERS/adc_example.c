@@ -8,8 +8,6 @@ int example_main(void) {
     config.channel = 0;
     config.sample_time = 0b111; // 480 cycles
 
-    // Setup GPIO pin as analog
-
 
     // Initialize ADC1
     adc_init(ADC1, &config);

@@ -1,5 +1,7 @@
-../Core/DRIVERS/hcsr04/MyHcsr04.c:8:6:hcsr04_init	1
-../Core/DRIVERS/hcsr04/MyHcsr04.c:39:6:TIM1_CC_IRQHandler	5
-../Core/DRIVERS/hcsr04/MyHcsr04.c:71:6:delay_us_hc	2
-../Core/DRIVERS/hcsr04/MyHcsr04.c:76:6:hcsr04_trig_hc	1
-../Core/DRIVERS/hcsr04/MyHcsr04.c:81:11:hcsr04_get_pulse_width	1
+../Core/DRIVERS/hcsr04/MyHcsr04.c:7:20:port_init	4
+../Core/DRIVERS/hcsr04/MyHcsr04.c:21:20:AFR_init	4
+../Core/DRIVERS/hcsr04/MyHcsr04.c:34:6:hcsr04_init	1
+../Core/DRIVERS/hcsr04/MyHcsr04.c:73:6:TIM1_CC_IRQHandler	5
+../Core/DRIVERS/hcsr04/MyHcsr04.c:105:6:delay_us_hc	2
+../Core/DRIVERS/hcsr04/MyHcsr04.c:110:6:hcsr04_trig_hc	1
+../Core/DRIVERS/hcsr04/MyHcsr04.c:116:11:hcsr04_get_pulse_width	1

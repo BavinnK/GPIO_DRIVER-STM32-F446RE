@@ -2,7 +2,7 @@
 #include "stm32f446xx.h"
 
 
-int example_main(void) {
+int example_adc_main(void) {
     // Configure channel 0
     adc_config_t config;
     config.channel = 0;

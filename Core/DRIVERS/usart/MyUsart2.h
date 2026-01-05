@@ -6,6 +6,6 @@
 
 
 void send_str(char * ptr,uint32_t length);
-void USART2_init(void);
+void USART2_init_DMA(void);
 
 #endif

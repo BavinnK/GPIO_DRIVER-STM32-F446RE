@@ -1,2 +1,2 @@
 ../Core/DRIVERS/usart/myUSART2.c:3:6:send_str	16	static
-../Core/DRIVERS/usart/myUSART2.c:15:6:USART2_init	4	static
+../Core/DRIVERS/usart/myUSART2.c:15:6:USART2_init_DMA	4	static

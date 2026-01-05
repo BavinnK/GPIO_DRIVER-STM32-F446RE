@@ -12,7 +12,7 @@ void send_str(char * ptr,uint32_t length) {
 
 //when we use this small lib for usart the cpu has to wait for a while in the send string func in the while loop line
 //ive decided to add DMA for sending the data so the cpu doesnt wait for the buffer to get empty and send the data
-void USART2_init(void) {
+void USART2_init_DMA(void) {
     // 1. Enable clocks
     RCC->AHB1ENR |= (1<<21)|(1 << 0);   // GPIOA, DMA1
     RCC->APB1ENR |= (1 << 17);  // USART2

@@ -6,15 +6,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/EXAMPLE_DRIVERS/adc_example.c \
-../Core/EXAMPLE_DRIVERS/hcsr04_example.c 
+../Core/EXAMPLE_DRIVERS/hcsr04_example.c \
+../Core/EXAMPLE_DRIVERS/usart_example.c 
 
 OBJS += \
 ./Core/EXAMPLE_DRIVERS/adc_example.o \
-./Core/EXAMPLE_DRIVERS/hcsr04_example.o 
+./Core/EXAMPLE_DRIVERS/hcsr04_example.o \
+./Core/EXAMPLE_DRIVERS/usart_example.o 
 
 C_DEPS += \
 ./Core/EXAMPLE_DRIVERS/adc_example.d \
-./Core/EXAMPLE_DRIVERS/hcsr04_example.d 
+./Core/EXAMPLE_DRIVERS/hcsr04_example.d \
+./Core/EXAMPLE_DRIVERS/usart_example.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +27,7 @@ Core/EXAMPLE_DRIVERS/%.o Core/EXAMPLE_DRIVERS/%.su Core/EXAMPLE_DRIVERS/%.cyclo:
 clean: clean-Core-2f-EXAMPLE_DRIVERS
 
 clean-Core-2f-EXAMPLE_DRIVERS:
-	-$(RM) ./Core/EXAMPLE_DRIVERS/adc_example.cyclo ./Core/EXAMPLE_DRIVERS/adc_example.d ./Core/EXAMPLE_DRIVERS/adc_example.o ./Core/EXAMPLE_DRIVERS/adc_example.su ./Core/EXAMPLE_DRIVERS/hcsr04_example.cyclo ./Core/EXAMPLE_DRIVERS/hcsr04_example.d ./Core/EXAMPLE_DRIVERS/hcsr04_example.o ./Core/EXAMPLE_DRIVERS/hcsr04_example.su
+	-$(RM) ./Core/EXAMPLE_DRIVERS/adc_example.cyclo ./Core/EXAMPLE_DRIVERS/adc_example.d ./Core/EXAMPLE_DRIVERS/adc_example.o ./Core/EXAMPLE_DRIVERS/adc_example.su ./Core/EXAMPLE_DRIVERS/hcsr04_example.cyclo ./Core/EXAMPLE_DRIVERS/hcsr04_example.d ./Core/EXAMPLE_DRIVERS/hcsr04_example.o ./Core/EXAMPLE_DRIVERS/hcsr04_example.su ./Core/EXAMPLE_DRIVERS/usart_example.cyclo ./Core/EXAMPLE_DRIVERS/usart_example.d ./Core/EXAMPLE_DRIVERS/usart_example.o ./Core/EXAMPLE_DRIVERS/usart_example.su
 
 .PHONY: clean-Core-2f-EXAMPLE_DRIVERS
 

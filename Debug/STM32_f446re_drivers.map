@@ -300,7 +300,7 @@ Discarded input sections
  .bss           0x00000000        0x0 ./Core/DRIVERS/usart/myUSART2.o
  .text.send_str
                 0x00000000       0x60 ./Core/DRIVERS/usart/myUSART2.o
- .text.USART2_init
+ .text.USART2_init_DMA
                 0x00000000       0xd8 ./Core/DRIVERS/usart/myUSART2.o
  .debug_info    0x00000000      0x3f1 ./Core/DRIVERS/usart/myUSART2.o
  .debug_abbrev  0x00000000       0xfc ./Core/DRIVERS/usart/myUSART2.o
@@ -324,7 +324,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x11f ./Core/DRIVERS/usart/myUSART2.o
  .debug_macro   0x00000000    0x16749 ./Core/DRIVERS/usart/myUSART2.o
  .debug_line    0x00000000      0x6b0 ./Core/DRIVERS/usart/myUSART2.o
- .debug_str     0x00000000    0x8ab5c ./Core/DRIVERS/usart/myUSART2.o
+ .debug_str     0x00000000    0x8ab60 ./Core/DRIVERS/usart/myUSART2.o
  .comment       0x00000000       0x44 ./Core/DRIVERS/usart/myUSART2.o
  .debug_frame   0x00000000       0x58 ./Core/DRIVERS/usart/myUSART2.o
  .ARM.attributes
@@ -346,7 +346,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .data          0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .bss           0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/adc_example.o
- .text.example_main
+ .text.example_adc_main
                 0x00000000       0x30 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .debug_info    0x00000000      0x2ea ./Core/EXAMPLE_DRIVERS/adc_example.o
  .debug_abbrev  0x00000000      0x106 ./Core/EXAMPLE_DRIVERS/adc_example.o
@@ -370,7 +370,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x11f ./Core/EXAMPLE_DRIVERS/adc_example.o
  .debug_macro   0x00000000    0x16749 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .debug_line    0x00000000      0x650 ./Core/EXAMPLE_DRIVERS/adc_example.o
- .debug_str     0x00000000    0x8ab94 ./Core/EXAMPLE_DRIVERS/adc_example.o
+ .debug_str     0x00000000    0x8ab98 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .comment       0x00000000       0x44 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .debug_frame   0x00000000       0x30 ./Core/EXAMPLE_DRIVERS/adc_example.o
  .ARM.attributes
@@ -421,6 +421,53 @@ Discarded input sections
  .debug_frame   0x00000000       0x30 ./Core/EXAMPLE_DRIVERS/hcsr04_example.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/EXAMPLE_DRIVERS/hcsr04_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .group         0x00000000        0xc ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .text          0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .data          0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .bss           0x00000000        0x0 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .rodata        0x00000000       0x19 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .text.example_usart_main
+                0x00000000       0x44 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_info    0x00000000      0x105 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_abbrev  0x00000000       0xc2 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_aranges
+                0x00000000       0x20 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_rnglists
+                0x00000000       0x13 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0xc9 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000      0xad8 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x22 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x8e ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x51 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000      0x103 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x6a ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000      0x1df ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x28 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x1c ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0x22 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000       0xfb ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000     0x1011 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000      0x11f ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_macro   0x00000000    0x16749 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_line    0x00000000      0x610 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_str     0x00000000    0x8a9eb ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .comment       0x00000000       0x44 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .debug_frame   0x00000000       0x34 ./Core/EXAMPLE_DRIVERS/usart_example.o
+ .ARM.attributes
+                0x00000000       0x34 ./Core/EXAMPLE_DRIVERS/usart_example.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
@@ -2585,6 +2632,7 @@ LOAD ./Core/DRIVERS/spi/MySpi.o
 LOAD ./Core/DRIVERS/usart/myUSART2.o
 LOAD ./Core/EXAMPLE_DRIVERS/adc_example.o
 LOAD ./Core/EXAMPLE_DRIVERS/hcsr04_example.o
+LOAD ./Core/EXAMPLE_DRIVERS/usart_example.o
 LOAD ./Core/Src/main.o
 LOAD ./Core/Src/stm32f4xx_hal_msp.o
 LOAD ./Core/Src/stm32f4xx_it.o

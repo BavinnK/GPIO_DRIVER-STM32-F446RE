@@ -6,6 +6,7 @@
 "./Core/DRIVERS/usart/myUSART2.o"
 "./Core/EXAMPLE_DRIVERS/adc_example.o"
 "./Core/EXAMPLE_DRIVERS/hcsr04_example.o"
+"./Core/EXAMPLE_DRIVERS/usart_example.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
 "./Core/Src/stm32f4xx_it.o"

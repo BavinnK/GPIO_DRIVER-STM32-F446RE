@@ -6,8 +6,9 @@
 #include "gpiox.h"//we might need this lib too but not sure yet
 
 void TIM_base_init(TIM_TypeDef * TIMx,uint16_t pcs,uint16_t arr);
-void TIM_start(void);
-void TIM_stop(void);
+void TIM_base_start(TIM_TypeDef *TIMx);
+void TIM_base_reset(TIM_TypeDef *TIMx);
+void TIM_base_stop(TIM_TypeDef *TIMx);
 
 
 

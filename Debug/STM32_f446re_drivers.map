@@ -82,12 +82,18 @@ Discarded input sections
                 0x00000000      0x130 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .text.TIM_base_init
                 0x00000000       0x48 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
- .debug_info    0x00000000      0x49d ./Core/DRIVERS/MyTimer/MyTimer_Base.o
- .debug_abbrev  0x00000000      0x142 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .text.TIM_base_start
+                0x00000000       0x20 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .text.TIM_base_reset
+                0x00000000       0x1a ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .text.TIM_base_stop
+                0x00000000       0x20 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .debug_info    0x00000000      0x505 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .debug_abbrev  0x00000000      0x160 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_aranges
-                0x00000000       0x30 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+                0x00000000       0x48 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_rnglists
-                0x00000000       0x21 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+                0x00000000       0x33 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_macro   0x00000000       0xd3 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_macro   0x00000000      0xad8 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_macro   0x00000000       0x28 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
@@ -103,10 +109,10 @@ Discarded input sections
  .debug_macro   0x00000000     0x1011 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_macro   0x00000000      0x11f ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .debug_macro   0x00000000    0x16749 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
- .debug_line    0x00000000      0x77d ./Core/DRIVERS/MyTimer/MyTimer_Base.o
- .debug_str     0x00000000    0x8ac08 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .debug_line    0x00000000      0x7cb ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .debug_str     0x00000000    0x8ac34 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .comment       0x00000000       0x44 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
- .debug_frame   0x00000000       0x80 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .debug_frame   0x00000000       0xf8 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .group         0x00000000        0xc ./Core/DRIVERS/adc/MyAdc.o

@@ -1,4 +1,5 @@
 "./Core/DRIVERS/MyTimer/MyTimer_Base.o"
+"./Core/DRIVERS/MyTimer/MyTimer_PWM.o"
 "./Core/DRIVERS/adc/MyAdc.o"
 "./Core/DRIVERS/gpio/gpiox.o"
 "./Core/DRIVERS/hcsr04/MyHcsr04.o"

@@ -83,7 +83,7 @@ static inline void tim_init(TIM_TypeDef *ptr){
 		break;
 	}
 }
-void TIM_base_init(TIM_TypeDef * TIMx,uint16_t pcs,uint16_t arr){
+void TIMx_base_init(TIM_TypeDef * TIMx,uint16_t pcs,uint16_t arr){
 	tim_init(TIMx);
 	TIMx->CR1&=~(1<<0);//turn the CNT off
 	TIMx->PSC=pcs;
@@ -91,12 +91,12 @@ void TIM_base_init(TIM_TypeDef * TIMx,uint16_t pcs,uint16_t arr){
 	TIMx->EGR|=(1<<0);//update the reg
 	TIMx->CNT=0;//reset the counter if there is any data
 }
-void TIM_base_start(TIM_TypeDef *TIMx){
+void TIMx_base_start(TIM_TypeDef *TIMx){
 	TIMx->CR1|=(1<<0);
 }
-void TIM_base_reset(TIM_TypeDef *TIMx){
+void TIMx_base_reset(TIM_TypeDef *TIMx){
 	TIMx->CNT=0;
 }
-void TIM_base_stop(TIM_TypeDef *TIMx){
+void TIMx_base_stop(TIM_TypeDef *TIMx){
 	TIMx->CR1&=~(1<<0);
 }

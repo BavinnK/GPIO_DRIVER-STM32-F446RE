@@ -1,6 +1,6 @@
 ../Core/DRIVERS/MyTimer/MyTimer_Base.c:19:28:set_timer	16	static
 ../Core/DRIVERS/MyTimer/MyTimer_Base.c:36:20:tim_init	24	static
-../Core/DRIVERS/MyTimer/MyTimer_Base.c:86:6:TIM_base_init	16	static
-../Core/DRIVERS/MyTimer/MyTimer_Base.c:94:6:TIM_base_start	16	static
-../Core/DRIVERS/MyTimer/MyTimer_Base.c:97:6:TIM_base_reset	16	static
-../Core/DRIVERS/MyTimer/MyTimer_Base.c:100:6:TIM_base_stop	16	static
+../Core/DRIVERS/MyTimer/MyTimer_Base.c:86:6:TIMx_base_init	16	static
+../Core/DRIVERS/MyTimer/MyTimer_Base.c:94:6:TIMx_base_start	16	static
+../Core/DRIVERS/MyTimer/MyTimer_Base.c:97:6:TIMx_base_reset	16	static
+../Core/DRIVERS/MyTimer/MyTimer_Base.c:100:6:TIMx_base_stop	16	static

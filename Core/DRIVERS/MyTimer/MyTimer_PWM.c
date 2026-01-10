@@ -59,6 +59,8 @@ static inline void pin_set_tim_chn(TIM_TypeDef *tim,GPIO_TypeDef*port,uint8_t pi
 		port->AFR[1]&=~(0b1111<<(pin*4));
 		port->AFR[1]|=(1<<(pin*4));
 	}
+}
+	/*
 	//GPIOB
 	else if(port==GPIOB && tim==TIM3 && chn==3 && pin==0){//PB0
 		port->AFR[0]&=~(0b1111<<(pin*4));
@@ -153,9 +155,36 @@ static inline void pin_set_tim_chn(TIM_TypeDef *tim,GPIO_TypeDef*port,uint8_t pi
 		port->AFR[1]&=~(0b1111<<(pin*4));
 		port->AFR[1]|=(3<<(pin*4));
 	}
-}
+}*/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+static inline void set_chn(TIM_TypeDef *ptr,uint8_t chn,uint8_t dutyCycle,uint16_t arr){
+	uint16_t ccrx_val=(dutyCycle*(arr+1))/100;
 
+	if(chn==1){
+		ptr->CCR1=ccrx_val;
+		ptr->CCMR1&=~(0b111<<4);
+		ptr->CCMR1|=(0b110<<4)|(1<<3);
+		ptr->CCER|=(1<<0);
+	}
+	else if(chn==2){
+		ptr->CCR2=ccrx_val;
+		ptr->CCMR1&=~(0b111<<12);
+		ptr->CCMR1|=(0b110<<12)|(1<<11);
+		ptr->CCER|=(1<<4);
+	}
+	else if(chn==3){
+		ptr->CCR3=ccrx_val;
+		ptr->CCMR2&=~(0b111<<4);
+		ptr->CCMR2|=(0b110<<4)|(1<<3);
+		ptr->CCER|=(1<<8);
+	}
+	else if(chn==4){
+		ptr->CCR4=ccrx_val;
+		ptr->CCMR2&=~(0b111<<12);
+		ptr->CCMR2|=(0b110<<12)|(1<<11);//enable mode 1 PWM and also the preload enable
+		ptr->CCER|=(1<<12);
+	}
+}
 void TIMx_pwm_init(TIM_TypeDef * TIMx,GPIO_TypeDef *port,uint8_t pin,uint16_t pcs,uint16_t arr,uint8_t channel,uint8_t duty_cycle){
 	gpio_set_up config;
 	config.PINx=pin;
@@ -165,6 +194,11 @@ void TIMx_pwm_init(TIM_TypeDef * TIMx,GPIO_TypeDef *port,uint8_t pin,uint16_t pc
 	config.PUPDRx=GPIOx_PUPDR_NONE;
 	gpio_init(port, &config);
 	TIMx_base_init(TIMx, pcs, arr);
+	set_chn(TIMx, channel, duty_cycle, arr);
+	TIMx->EGR|=(1<<0);//update the data
+	TIMx->CR1|=(1<<0);//CNT enable
+
+
 
 
 

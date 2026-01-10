@@ -1,1 +1,2 @@
-../Core/DRIVERS/MyTimer/MyTimer_PWM.c:159:6:TIMx_pwm_init	1
+../Core/DRIVERS/MyTimer/MyTimer_PWM.c:160:20:set_chn	5
+../Core/DRIVERS/MyTimer/MyTimer_PWM.c:188:6:TIMx_pwm_init	1

@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpiox.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -104,10 +103,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  gpio_set(GPIOA, 5);
-	  	  for(int i=0;i<10000000;i++);
-	  	  gpio_reset(GPIOA, 5);
-	  	  for(int i=0;i<10000000;i++);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

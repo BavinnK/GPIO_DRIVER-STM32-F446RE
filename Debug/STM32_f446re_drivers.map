@@ -80,6 +80,54 @@ Discarded input sections
                 0x00000000       0x1a ./Core/DRIVERS/MyTimer/MyTimer_Base.o
  .text.TIMx_base_stop
                 0x00000000       0x20 ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .text          0x00000000        0x0 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .data          0x00000000        0x0 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .bss           0x00000000        0x0 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .text.pin_set_tim_chn
+                0x00000000      0xafc ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .text.TIMx_IC_init
+                0x00000000       0x5c ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_info    0x00000000      0x495 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_abbrev  0x00000000      0x169 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_aranges
+                0x00000000       0x28 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_rnglists
+                0x00000000       0x1a ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0xed ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000      0xad8 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x28 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x22 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x8e ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x51 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000      0x103 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x6a ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000      0x1df ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x1c ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0x22 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000       0xfb ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000     0x1011 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000      0x11f ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_macro   0x00000000    0x16749 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_line    0x00000000      0xda7 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_str     0x00000000    0x8ac67 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .comment       0x00000000       0x44 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .debug_frame   0x00000000       0x5c ./Core/DRIVERS/MyTimer/MyTimer_IC.o
+ .ARM.attributes
+                0x00000000       0x34 ./Core/DRIVERS/MyTimer/MyTimer_IC.o
  .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_PWM.o
  .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_PWM.o
  .group         0x00000000        0xc ./Core/DRIVERS/MyTimer/MyTimer_PWM.o
@@ -2683,6 +2731,7 @@ LOAD C:/Users/pc/Documents/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32
 LOAD C:/Users/pc/Documents/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 LOAD C:/Users/pc/Documents/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
 LOAD ./Core/DRIVERS/MyTimer/MyTimer_Base.o
+LOAD ./Core/DRIVERS/MyTimer/MyTimer_IC.o
 LOAD ./Core/DRIVERS/MyTimer/MyTimer_PWM.o
 LOAD ./Core/DRIVERS/adc/MyAdc.o
 LOAD ./Core/DRIVERS/gpio/gpiox.o

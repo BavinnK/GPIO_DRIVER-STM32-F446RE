@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/DRIVERS/MyTimer/MyTimer_Base.c \
+../Core/DRIVERS/MyTimer/MyTimer_IC.c \
 ../Core/DRIVERS/MyTimer/MyTimer_PWM.c 
 
 OBJS += \
 ./Core/DRIVERS/MyTimer/MyTimer_Base.o \
+./Core/DRIVERS/MyTimer/MyTimer_IC.o \
 ./Core/DRIVERS/MyTimer/MyTimer_PWM.o 
 
 C_DEPS += \
 ./Core/DRIVERS/MyTimer/MyTimer_Base.d \
+./Core/DRIVERS/MyTimer/MyTimer_IC.d \
 ./Core/DRIVERS/MyTimer/MyTimer_PWM.d 
 
 
@@ -24,7 +27,7 @@ Core/DRIVERS/MyTimer/%.o Core/DRIVERS/MyTimer/%.su Core/DRIVERS/MyTimer/%.cyclo:
 clean: clean-Core-2f-DRIVERS-2f-MyTimer
 
 clean-Core-2f-DRIVERS-2f-MyTimer:
-	-$(RM) ./Core/DRIVERS/MyTimer/MyTimer_Base.cyclo ./Core/DRIVERS/MyTimer/MyTimer_Base.d ./Core/DRIVERS/MyTimer/MyTimer_Base.o ./Core/DRIVERS/MyTimer/MyTimer_Base.su ./Core/DRIVERS/MyTimer/MyTimer_PWM.cyclo ./Core/DRIVERS/MyTimer/MyTimer_PWM.d ./Core/DRIVERS/MyTimer/MyTimer_PWM.o ./Core/DRIVERS/MyTimer/MyTimer_PWM.su
+	-$(RM) ./Core/DRIVERS/MyTimer/MyTimer_Base.cyclo ./Core/DRIVERS/MyTimer/MyTimer_Base.d ./Core/DRIVERS/MyTimer/MyTimer_Base.o ./Core/DRIVERS/MyTimer/MyTimer_Base.su ./Core/DRIVERS/MyTimer/MyTimer_IC.cyclo ./Core/DRIVERS/MyTimer/MyTimer_IC.d ./Core/DRIVERS/MyTimer/MyTimer_IC.o ./Core/DRIVERS/MyTimer/MyTimer_IC.su ./Core/DRIVERS/MyTimer/MyTimer_PWM.cyclo ./Core/DRIVERS/MyTimer/MyTimer_PWM.d ./Core/DRIVERS/MyTimer/MyTimer_PWM.o ./Core/DRIVERS/MyTimer/MyTimer_PWM.su
 
 .PHONY: clean-Core-2f-DRIVERS-2f-MyTimer
 

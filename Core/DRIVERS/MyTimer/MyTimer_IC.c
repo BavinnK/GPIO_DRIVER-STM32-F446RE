@@ -218,9 +218,14 @@ static inline void set_chn(TIM_TypeDef *tim,uint8_t chn,edge_captcure edge){
 		tim->CCMR2&=~(3<<8);
 		tim->CCMR2|=(1<<8);
 		tim->CCER|=(1<<12)|(1<<13)|(1<<15);
-		}
+	}
 }
-
+static inline uint16_t chn_data(TIM_TypeDef *tim,uint8_t chn){
+	if(chn==1) 		return tim->CCR1;
+	else if(chn==2) return tim->CCR2;
+	else if(chn==3) return tim->CCR3;
+	else if(chn==4) return tim->CCR4;
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void TIMx_IC_init(TIM_TypeDef *TIMx,GPIO_TypeDef *port,uint8_t channel,edge_captcure edge,uint8_t pin,uint16_t pcs ){
 	gpio_set_up config;
@@ -238,4 +243,7 @@ void TIMx_IC_init(TIM_TypeDef *TIMx,GPIO_TypeDef *port,uint8_t channel,edge_capt
 	TIMx->EGR|=(1);
 	TIMx_base_start(TIMx);
 
+}
+uint16_t TIMx_get_data(TIM_TypeDef *TIMx,uint8_t channel){
+	return chn_data(TIMx, channel);
 }

@@ -1,3 +1,5 @@
 ../Core/DRIVERS/MyTimer/MyTimer_IC.c:3:20:pin_set_tim_chn	149
 ../Core/DRIVERS/MyTimer/MyTimer_IC.c:160:20:set_chn	25
-../Core/DRIVERS/MyTimer/MyTimer_IC.c:225:6:TIMx_IC_init	1
+../Core/DRIVERS/MyTimer/MyTimer_IC.c:223:24:chn_data	5
+../Core/DRIVERS/MyTimer/MyTimer_IC.c:230:6:TIMx_IC_init	1
+../Core/DRIVERS/MyTimer/MyTimer_IC.c:247:10:TIMx_get_data	1

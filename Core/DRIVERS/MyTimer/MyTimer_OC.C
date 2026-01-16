@@ -23,24 +23,24 @@ static inline void set_chn_tim(TIM_TypeDef *tim,uint8_t chn,TIMx_OC_MODE mode,ui
 		tim->CCR1=ticks;
 	}
 	else if(chn==2 && mode==SET){
-		tim->CCMR1&=~((7<<12)|(3<<0));//clear bits 12 till 14
+		tim->CCMR1&=~((7<<12)|(3<<8));//clear bits 12 till 14
 		tim->CCMR1|=(1<<12);// Set channel 2 to active level on match.
-		tim->CCER&=~(1<<7);//clear polarity bit
+		tim->CCER&=~(1<<5);//clear polarity bit
 		tim->CCER|=(1<<4);
 		tim->CCR2=ticks;
 	}
 	else if(chn==2 && mode==RESET){
-		tim->CCMR1&=~((7<<12)|(3<<0));//clear bits 12 till 14
+		tim->CCMR1&=~((7<<12)|(3<<8));//clear bits 12 till 14
 		tim->CCMR1|=(2<<12);// Set channel 2 to active level on match.
-		tim->CCER&=~(1<<7);//clear polarity bit
+		tim->CCER&=~(1<<5);//clear polarity bit
 		tim->CCER|=(1<<4);
 		tim->CCR2=ticks;
 
 	}
 	else if(chn==2 && mode==TOGGLE){
-		tim->CCMR1&=~((7<<12)|(3<<0));//clear bits 12 till 14
+		tim->CCMR1&=~((7<<12)|(3<<8));//clear bits 12 till 14
 		tim->CCMR1|=(3<<12);// Set channel 2 to active level on match.
-		tim->CCER&=~(1<<7);//clear polarity bit
+		tim->CCER&=~(1<<5);//clear polarity bit
 		tim->CCER|=(1<<4);
 		tim->CCR2=ticks;
 
@@ -70,7 +70,7 @@ static inline void set_chn_tim(TIM_TypeDef *tim,uint8_t chn,TIMx_OC_MODE mode,ui
 
 	}
 	else if(chn==4 && mode==SET){
-		tim->CCMR2&=~((7<<12)|(3<<0));//clear bits 12 till 14
+		tim->CCMR2&=~((7<<12)|(3<<8));//clear bits 12 till 14
 		tim->CCMR2|=(1<<12);// Set channel 2 to active level on match.
 		tim->CCER&=~(1<<13);//clear polarity bit
 		tim->CCER|=(1<<12);
@@ -78,7 +78,7 @@ static inline void set_chn_tim(TIM_TypeDef *tim,uint8_t chn,TIMx_OC_MODE mode,ui
 
 	}
 	else if(chn==4 && mode==RESET){
-		tim->CCMR2&=~((7<<12)|(3<<0));//clear bits 12 till 14
+		tim->CCMR2&=~((7<<12)|(3<<8));//clear bits 12 till 14
 		tim->CCMR2|=(2<<12);// Set channel 2 to active level on match.
 		tim->CCER&=~(1<<13);//clear polarity bit
 		tim->CCER|=(1<<12);
@@ -86,7 +86,7 @@ static inline void set_chn_tim(TIM_TypeDef *tim,uint8_t chn,TIMx_OC_MODE mode,ui
 
 	}
 	else if(chn==4 && mode==TOGGLE){
-		tim->CCMR2&=~((7<<12)|(3<<0));//clear bits 12 till 14,also bit 0 and 1
+		tim->CCMR2&=~((7<<12)|(3<<8));//clear bits 12 till 14,also bit 0 and 1
 		tim->CCMR2|=(3<<12);// Set channel 2 to active level on match.
 		tim->CCER&=~(1<<13);//clear polarity bit
 		tim->CCER|=(1<<12);

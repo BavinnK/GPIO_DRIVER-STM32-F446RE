@@ -112,4 +112,9 @@ void TIMx_OC_init(TIM_TypeDef *TIMx,GPIO_TypeDef *port,uint8_t pin,uint8_t chann
 	set_chn_tim(TIMx, channel, mode,ticks);
 	TIMx->EGR|=(1);
 	TIMx_base_start(TIMx);
+	//in advanced timers like TIM1 AND TIM8 there is a safety feature designed for them we have to manually set MOE
+	//bit to make it work
+	if(TIMx==TIM1 || TIMx==TIM8){
+		TIMx->BDTR|=(1<<15);
+	}
 }

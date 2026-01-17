@@ -1,5 +1,5 @@
-#ifndef MYTIMER_H_
-#define MYTIMER_H_
+#ifndef MYTIMER_H
+#define MYTIMER_H
 #include "MyTimer_Base.h"
 #include "stm32f446xx.h"
 #include <stdint.h>

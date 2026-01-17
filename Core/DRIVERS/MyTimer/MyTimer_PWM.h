@@ -1,5 +1,5 @@
-#ifndef MYTIMER_PWM_H_
-#define MYTIMER_PWM_H_
+#ifndef MYTIMER_PWM_H
+#define MYTIMER_PWM_H
 #include "MyTimer_Base.h"
 #include "stm32f446xx.h"
 #include <stdint.h>

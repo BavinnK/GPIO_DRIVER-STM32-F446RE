@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/DRIVERS/usart/RingBuffer.c \
 ../Core/DRIVERS/usart/myUSART2.c 
 
 OBJS += \
+./Core/DRIVERS/usart/RingBuffer.o \
 ./Core/DRIVERS/usart/myUSART2.o 
 
 C_DEPS += \
+./Core/DRIVERS/usart/RingBuffer.d \
 ./Core/DRIVERS/usart/myUSART2.d 
 
 
@@ -21,7 +24,7 @@ Core/DRIVERS/usart/%.o Core/DRIVERS/usart/%.su Core/DRIVERS/usart/%.cyclo: ../Co
 clean: clean-Core-2f-DRIVERS-2f-usart
 
 clean-Core-2f-DRIVERS-2f-usart:
-	-$(RM) ./Core/DRIVERS/usart/myUSART2.cyclo ./Core/DRIVERS/usart/myUSART2.d ./Core/DRIVERS/usart/myUSART2.o ./Core/DRIVERS/usart/myUSART2.su
+	-$(RM) ./Core/DRIVERS/usart/RingBuffer.cyclo ./Core/DRIVERS/usart/RingBuffer.d ./Core/DRIVERS/usart/RingBuffer.o ./Core/DRIVERS/usart/RingBuffer.su ./Core/DRIVERS/usart/myUSART2.cyclo ./Core/DRIVERS/usart/myUSART2.d ./Core/DRIVERS/usart/myUSART2.o ./Core/DRIVERS/usart/myUSART2.su
 
 .PHONY: clean-Core-2f-DRIVERS-2f-usart
 

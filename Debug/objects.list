@@ -6,6 +6,7 @@
 "./Core/DRIVERS/hcsr04/MyHcsr04.o"
 "./Core/DRIVERS/pwm/MyPwm.o"
 "./Core/DRIVERS/spi/MySpi.o"
+"./Core/DRIVERS/usart/MyUsart.o"
 "./Core/DRIVERS/usart/RingBuffer.o"
 "./Core/DRIVERS/usart/myUSART2.o"
 "./Core/EXAMPLE_DRIVERS/adc_example.o"

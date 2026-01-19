@@ -1,4 +1,6 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
 ../Core/DRIVERS/usart/MyUsart.c:3:24:set_baud	10
 ../Core/DRIVERS/usart/MyUsart.c:23:6:Usart2_init	1
-../Core/DRIVERS/usart/MyUsart.c:47:6:USART2_IQRHandler	2
+../Core/DRIVERS/usart/MyUsart.c:47:6:Usart2_SendByte	2
+../Core/DRIVERS/usart/MyUsart.c:55:6:Usart2_SendString	2
+../Core/DRIVERS/usart/MyUsart.c:61:6:USART2_IRQHandler	4

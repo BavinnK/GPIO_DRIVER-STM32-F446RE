@@ -1,5 +1,5 @@
 #include "MyUsart.h"
-RingBuffer_t usart2_ring;
+RingBuffer_t usart2_ring_RX,usart2_ring_TX;
 static inline uint32_t set_baud(uint32_t baud){
 	/*
 	 * the reason i did not put any equation to get the BRR parts which are
@@ -36,20 +36,41 @@ void Usart2_init(uint32_t baudRate){
 
 	gpio_init(GPIOA, &config_TX);
 	gpio_init(GPIOA, &config_RX);
-
-	GPIOA->AFR[0]&=((0b1111<<(2*4))|(0b1111<<(3*4)));
+	RCC->APB1ENR|=(1<<17);
+	GPIOA->AFR[0]&=~((0b1111<<(2*4))|(0b1111<<(3*4)));
 	GPIOA->AFR[0]|=(7<<2*4)|(7<<3*4);
 
 	USART2->CR1|=(1<<2)|(1<<3)|(1<<13)|(1<<5);
 	USART2->BRR=set_baud(baudRate);
 	NVIC_EnableIRQ(USART2_IRQn);//enable the USART INT into the NVIC handler
 }
-void USART2_IQRHandler(void){
+bool Usart2_SendByte(char ch){
+	bool isFull=RingBuffer_Write(&usart2_ring_TX, ch);
+	if(isFull){
+		USART2->CR1|=(1<<7);
+		return true;
+	}
+	else return false;
+}
+void Usart2_SendString(char *ptr){
+	while(*ptr){
+		Usart2_SendByte(*ptr++);
+	}
+
+}
+void USART2_IRQHandler(void){
 	if(USART2->SR&(1<<5)){
 		//if this condition is true means RXNE flag is set
 		//and when this flag i set means a data arrived and we have to read that data from the data register and send it to the ring buffer
 		uint8_t data=USART2->DR;
-		RingBuffer_Write(&usart2_ring, data);
-
+		RingBuffer_Write(&usart2_ring_RX, data);
+	}
+	if(USART2->SR&(1<<7)){
+		//when the TXIE flag is set means there is data in the register
+		uint8_t data1;
+		if(RingBuffer_Read(&usart2_ring_TX, &data1)){
+			USART2->DR=data1;
+		}
+		else USART2->CR1&=~(1<<7);//if the buffer is empty disable the TXE bit
 	}
 }

@@ -67,10 +67,16 @@ void SPI2_init(GPIO_TypeDef *port,uint8_t CS,uint32_t frequency_Mhz,spi_frame_fo
 	set_format(format);
 	SPI2->CR1|=(set_freq(frequency_Mhz)<<3)|(1<<2)|(1<<0);//set the spi to master, then set the freq that was provided by the user
 	//then set the clock phase so in the second edge the transmission of data beginst the first edge is just a hand shake with the slave device
-	SPI2->CR1|=(3<<8);//we set both SSM AND SSI to one, basicallly we tell the spi hey i wanna handle the chip select dont worry
+	SPI2->CR1|=(3<<8)|(1<<6);//we set both SSM AND SSI to one, basicallly we tell the spi hey i wanna handle the chip select dont worry, then enable the prepherial
 
-
-
+}
+uint8_t SPI2_Receive_Transmit(GPIO_TypeDef *port,uint8_t CS,uint8_t data){
+	gpio_reset(port, CS);//we set the chip select to low when we send or get data otherwise set it to high
+	while(!(SPI2->SR&(1<<1)));//WAIT UNTIL THE TRANSMIT BUFFER IS EMPTY, afterwards send the data
+	SPI2->DR=data;
+	while(!(SPI2->SR&(1<<0)));//WAIT UNTIL THE RECEIVE BUFFER IS NOT EMPTY, afterwards GET the data
+	gpio_set(port, CS);
+	return SPI2->DR;
 
 
 

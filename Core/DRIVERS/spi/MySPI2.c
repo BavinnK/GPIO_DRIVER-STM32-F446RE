@@ -1,6 +1,31 @@
 #include "MySPI2.h"
 
-void SPI2_init(){
+static inline void set_format(spi_frame_format format){
+	if(format==MSB){
+		SPI2->CR1&=~(1<<7);
+	}
+	else if(format==LSB){
+		SPI2->CR1|=(1<<7);
+	}
+}
+
+
+static inline uint32_t set_freq(uint32_t freq){
+	static const uint16_t psc_table[8]={2,4,8,16,32,64,128,256};
+	static const uint32_t pclk=42000000;//prepherial clock of APB1 bus is 42Mhz rightnow, depending on u freq bus u have to change this variable
+	uint32_t closest=0,baud_value=0,best_PSC=0,best_closest=0xFFFF;
+	for(int i=0;i<=7;i++){
+		baud_value=pclk/psc_table[i];
+		closest=abs(baud_value-freq);
+		if(closest<=best_closest){
+			best_closest=closest;
+			best_PSC=i;
+		}
+
+	}
+	return best_PSC;
+}
+void SPI2_init(uint32_t frequency_Mhz,spi_frame_format format){
 
 	gpio_set_up config_spi_MOSI,config_spi_MISO,config_spi_SCLK;
 	config_spi_MOSI.PINx=1;//PC1
@@ -29,6 +54,12 @@ void SPI2_init(){
 	GPIOB->AFR[1]&=~(0b1111<<4*(10-8));
 	GPIOC->AFR[0]|=((5<<4*1)|(5<<4*2));
 	GPIOB->AFR[1]|=(5<<4*(10-8));
+
+	RCC->APB1ENR|=(1<<14);//SPI2 CLK EN
+	SPI2->CR1&=~(1<<6);//DISABLE SPI2 FIRST
+	set_format(format);
+
+
 
 
 

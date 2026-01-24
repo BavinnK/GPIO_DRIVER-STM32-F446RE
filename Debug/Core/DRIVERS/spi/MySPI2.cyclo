@@ -1,1 +1,2 @@
-../Core/DRIVERS/spi/MySPI2.c:3:6:SPI2_init	1
+../Core/DRIVERS/spi/MySPI2.c:3:20:set_format	3
+../Core/DRIVERS/spi/MySPI2.c:28:6:SPI2_init	1

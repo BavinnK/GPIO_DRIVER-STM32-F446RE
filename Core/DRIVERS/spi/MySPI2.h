@@ -1,6 +1,7 @@
 #ifndef MYSPI2_H
 #define MYSPI2_H
-//#include "math.h"
+#include "stdint.h"
+#include "stm32f446xx.h"
 #include "gpiox.h"
 #include "stdlib.h"
 

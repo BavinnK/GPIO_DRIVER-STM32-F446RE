@@ -83,5 +83,25 @@ void I2Cx_start(I2C_TypeDef *I2Cx){
 	while(!(I2Cx->SR1&(1<<0)));//wait until  I2C is ready
 }
 void I2Cx_stop(I2C_TypeDef *I2Cx){
-	I2Cx->CR1&=~(1<<8);
+	I2Cx->CR1|=(1<<9);
+}
+
+void I2Cx_write(I2C_TypeDef *I2Cx, uint8_t slave_addr, uint8_t register_addr, uint8_t data){
+	I2Cx_start(I2Cx);
+
+	I2Cx->DR=(slave_addr<<1);//the slave addr should be 7 bit with the first bit which is bit 0 should be zero its called R/W bit
+	while(!(I2Cx->SR1&(1<<1)));
+
+	I2Cx->SR1;
+	I2Cx->SR2;
+
+	//we read both registers to clear ADDR bit in SR1
+
+	I2Cx->DR=register_addr;
+	while(!(I2Cx->SR1&(1<<7)));
+
+	I2Cx->DR=data;
+	while(!(I2Cx->SR1&(1<<7)));
+
+	I2Cx_stop(I2Cx);
 }

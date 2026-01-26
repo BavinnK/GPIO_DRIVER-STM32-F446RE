@@ -2,3 +2,4 @@
 ../Core/DRIVERS/i2c/MyI2C.c:73:6:I2Cx_init	16	static
 ../Core/DRIVERS/i2c/MyI2C.c:81:6:I2Cx_start	16	static
 ../Core/DRIVERS/i2c/MyI2C.c:85:6:I2Cx_stop	16	static
+../Core/DRIVERS/i2c/MyI2C.c:89:6:I2Cx_write	16	static

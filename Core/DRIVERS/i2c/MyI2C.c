@@ -105,3 +105,35 @@ void I2Cx_write(I2C_TypeDef *I2Cx, uint8_t slave_addr, uint8_t register_addr, ui
 
 	I2Cx_stop(I2Cx);
 }
+
+void I2Cx_read(I2C_TypeDef *I2Cx,uint8_t slave_addr, uint8_t register_addr, uint8_t data_length, uint8_t *buffer){
+
+	I2Cx_start(I2Cx);
+
+	I2Cx->DR=(slave_addr<<1);//the slave addr should be 7 bit with the first bit which is bit 0 should be zero its called R/W bit
+	while(!(I2Cx->SR1&(1<<1)));
+
+	I2Cx->SR1;
+	I2Cx->SR2;
+
+	I2Cx->DR=register_addr;
+	while(!(I2Cx->SR1&(1<<7)));
+
+	//THEN WE DO REAPETED START
+
+	I2Cx_start(I2Cx);
+
+	I2Cx->DR=(slave_addr<<1)|1;//we send the slave addr again but with R/W = 1
+	while(!(I2Cx->SR1&(1<<7)));
+
+	for(uint8_t i=0;i<data_length;i++){
+		buffer[i]=I2Cx->DR;
+		if(i==data_length-1){
+			I2Cx->CR1&=~(1<<10);//send NACK
+		}
+		else{
+			I2Cx->CR1|=(1<<10);//send ACK
+		}
+	}
+	I2Cx_stop(I2Cx);
+}

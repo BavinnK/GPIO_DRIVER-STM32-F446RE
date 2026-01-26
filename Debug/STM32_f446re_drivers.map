@@ -292,6 +292,53 @@ Discarded input sections
  .debug_macro   0x00000000     0x1011 ./Core/DRIVERS/hcsr04/MyHcsr04.o
  .debug_macro   0x00000000      0x11f ./Core/DRIVERS/hcsr04/MyHcsr04.o
  .debug_macro   0x00000000    0x16749 ./Core/DRIVERS/hcsr04/MyHcsr04.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .group         0x00000000        0xc ./Core/DRIVERS/i2c/MyI2C.o
+ .text          0x00000000        0x0 ./Core/DRIVERS/i2c/MyI2C.o
+ .data          0x00000000        0x0 ./Core/DRIVERS/i2c/MyI2C.o
+ .bss           0x00000000        0x0 ./Core/DRIVERS/i2c/MyI2C.o
+ .text.i2c_set  0x00000000      0x1a8 ./Core/DRIVERS/i2c/MyI2C.o
+ .text.I2Cx_init
+                0x00000000       0x46 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_info    0x00000000      0x503 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_abbrev  0x00000000      0x16b ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_aranges
+                0x00000000       0x28 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_rnglists
+                0x00000000       0x1a ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0xd3 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000      0xad8 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x28 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x22 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x8e ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x51 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000      0x103 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x6a ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000      0x1df ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x1c ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0x22 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000       0xfb ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000     0x1011 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000      0x11f ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_macro   0x00000000    0x16749 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_line    0x00000000      0x729 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_str     0x00000000    0x8acc7 ./Core/DRIVERS/i2c/MyI2C.o
+ .comment       0x00000000       0x44 ./Core/DRIVERS/i2c/MyI2C.o
+ .debug_frame   0x00000000       0x58 ./Core/DRIVERS/i2c/MyI2C.o
+ .ARM.attributes
+                0x00000000       0x34 ./Core/DRIVERS/i2c/MyI2C.o
  .group         0x00000000        0xc ./Core/DRIVERS/pwm/MyPwm.o
  .group         0x00000000        0xc ./Core/DRIVERS/pwm/MyPwm.o
  .group         0x00000000        0xc ./Core/DRIVERS/pwm/MyPwm.o
@@ -382,17 +429,21 @@ Discarded input sections
  .text.SPI2_init
                 0x00000000      0x134 ./Core/DRIVERS/spi/MySPI2.o
  .text.SPI2_Receive_Transmit
-                0x00000000       0x58 ./Core/DRIVERS/spi/MySPI2.o
+                0x00000000       0x48 ./Core/DRIVERS/spi/MySPI2.o
+ .text.SPI2_CS_select
+                0x00000000       0x1e ./Core/DRIVERS/spi/MySPI2.o
+ .text.SPI2_CS_deselect
+                0x00000000       0x1e ./Core/DRIVERS/spi/MySPI2.o
  .rodata.pclk.1
                 0x00000000        0x4 ./Core/DRIVERS/spi/MySPI2.o
  .rodata.psc_table.0
                 0x00000000       0x10 ./Core/DRIVERS/spi/MySPI2.o
- .debug_info    0x00000000      0x6b0 ./Core/DRIVERS/spi/MySPI2.o
- .debug_abbrev  0x00000000      0x1cd ./Core/DRIVERS/spi/MySPI2.o
+ .debug_info    0x00000000      0x70e ./Core/DRIVERS/spi/MySPI2.o
+ .debug_abbrev  0x00000000      0x1cf ./Core/DRIVERS/spi/MySPI2.o
  .debug_aranges
-                0x00000000       0x38 ./Core/DRIVERS/spi/MySPI2.o
+                0x00000000       0x48 ./Core/DRIVERS/spi/MySPI2.o
  .debug_rnglists
-                0x00000000       0x26 ./Core/DRIVERS/spi/MySPI2.o
+                0x00000000       0x32 ./Core/DRIVERS/spi/MySPI2.o
  .debug_macro   0x00000000      0x1a4 ./Core/DRIVERS/spi/MySPI2.o
  .debug_macro   0x00000000      0xad8 ./Core/DRIVERS/spi/MySPI2.o
  .debug_macro   0x00000000       0x22 ./Core/DRIVERS/spi/MySPI2.o
@@ -426,10 +477,10 @@ Discarded input sections
  .debug_macro   0x00000000      0x185 ./Core/DRIVERS/spi/MySPI2.o
  .debug_macro   0x00000000       0x16 ./Core/DRIVERS/spi/MySPI2.o
  .debug_macro   0x00000000       0x29 ./Core/DRIVERS/spi/MySPI2.o
- .debug_line    0x00000000      0x8d6 ./Core/DRIVERS/spi/MySPI2.o
- .debug_str     0x00000000    0x8e392 ./Core/DRIVERS/spi/MySPI2.o
+ .debug_line    0x00000000      0x900 ./Core/DRIVERS/spi/MySPI2.o
+ .debug_str     0x00000000    0x8e3b2 ./Core/DRIVERS/spi/MySPI2.o
  .comment       0x00000000       0x44 ./Core/DRIVERS/spi/MySPI2.o
- .debug_frame   0x00000000       0xa8 ./Core/DRIVERS/spi/MySPI2.o
+ .debug_frame   0x00000000       0xf4 ./Core/DRIVERS/spi/MySPI2.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/DRIVERS/spi/MySPI2.o
  .group         0x00000000        0xc ./Core/DRIVERS/spi/MySpi.o
@@ -2896,6 +2947,7 @@ LOAD ./Core/DRIVERS/MyTimer/MyTimer_PWM.o
 LOAD ./Core/DRIVERS/adc/MyAdc.o
 LOAD ./Core/DRIVERS/gpio/gpiox.o
 LOAD ./Core/DRIVERS/hcsr04/MyHcsr04.o
+LOAD ./Core/DRIVERS/i2c/MyI2C.o
 LOAD ./Core/DRIVERS/pwm/MyPwm.o
 LOAD ./Core/DRIVERS/spi/MySPI2.o
 LOAD ./Core/DRIVERS/spi/MySpi.o

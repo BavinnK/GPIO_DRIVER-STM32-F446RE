@@ -26,6 +26,7 @@ Core/DRIVERS/MyTimer \
 Core/DRIVERS/adc \
 Core/DRIVERS/gpio \
 Core/DRIVERS/hcsr04 \
+Core/DRIVERS/i2c \
 Core/DRIVERS/pwm \
 Core/DRIVERS/spi \
 Core/DRIVERS/usart \

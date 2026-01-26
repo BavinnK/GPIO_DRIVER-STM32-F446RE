@@ -1,0 +1,2 @@
+../Core/DRIVERS/i2c/MyI2C.c:3:20:i2c_set	4
+../Core/DRIVERS/i2c/MyI2C.c:73:6:I2Cx_init	1

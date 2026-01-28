@@ -1,1 +1,2 @@
-../Core/DRIVERS/dma/MyDMA.c:3:6:DMAx_init	16	static
+../Core/DRIVERS/dma/MyDMA.c:2:20:DMA_config	16	static
+../Core/DRIVERS/dma/MyDMA.c:11:6:DMAx_init	16	static

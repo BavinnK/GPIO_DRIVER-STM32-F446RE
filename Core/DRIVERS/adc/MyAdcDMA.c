@@ -52,7 +52,8 @@ void adc_dma_init(ADC_TypeDef *adc_port,adc_config_t *ptr,DMA_TypeDef *DMAx,DMA_
 	adc_setuo(adc_port);
 
 	//enable ADCx
-	adc_port->CR2 |= (1 << 0);
+	adc_port->CR1|=(1<<8);//enable scan mode
+	adc_port->CR2 |= (1 << 0)|(1<<1);
 	adc_port->CR2&=~(1<<30);//disable conversion
 	//small delay to let ADC stabilize
 	for (volatile int i = 0; i < 1000; i++);

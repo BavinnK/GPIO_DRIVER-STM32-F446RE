@@ -1,4 +1,4 @@
-#include <MYadc.h>
+#include <MyAdcDMA.h>
 
 static inline GPIO_TypeDef* channel_setup(uint8_t port){//inline helper func for the GPIO port
 	if(port>=0 && port<=7){
@@ -39,7 +39,7 @@ static inline void channel_adc(ADC_TypeDef *adc_port,uint8_t chn,uint8_t sample)
 		adc_port->SMPR1|=(sample<<(chn*3));
 	}
 }
-void adc_init(ADC_TypeDef *adc_port,adc_config_t *ptr) {
+void adc_dma_init(ADC_TypeDef *adc_port,adc_config_t *ptr,DMA_TypeDef *DMAx,DMA_config_t* DMAx_config) {
 
 	gpio_set_up config;
 	config.MODERx=GPIOx_MODER_ANALOG;
@@ -51,32 +51,17 @@ void adc_init(ADC_TypeDef *adc_port,adc_config_t *ptr) {
 	gpio_init(port, &config);
 	adc_setuo(adc_port);
 
-	// Enable ADCx
+	//enable ADCx
 	adc_port->CR2 |= (1 << 0);
-
-	// Small delay to let ADC stabilize
+	adc_port->CR2&=~(1<<30);//disable conversion
+	//small delay to let ADC stabilize
 	for (volatile int i = 0; i < 1000; i++);
 
-	// Calibrate ADC (IMPORTANT to remove offset error)
-	adc_port->CR2 |= (1 << 3);
-	while (adc_port->CR2 & (1 << 3));	// wait until calibration finishes
+
+	adc_port->CR2 |= (3<<8);
+
+	DMAx_init(DMAx, DMAx_config);
+	adc_port->CR2|=(1<<30);
 }
 
-uint16_t adc_read(ADC_TypeDef *adc_port,uint8_t channel) {
 
-	// Clear SQ1 (we use only one conversion)
-	adc_port->SQR3 &= ~(0b11111);
-
-
-	adc_port->SQR3 |= channel;
-
-	// Start conversion by software
-	adc_port->CR2 &= ~(1 << 30);	// reset state
-	adc_port->CR2 |= (1 << 30);		// start conversion
-
-	// Wait until conversion is complete
-	while (!(adc_port->SR & (1 << 1)));
-
-	// Reading DR clears EOC flag automatically
-	return adc_port->DR;
-}

@@ -1,0 +1,3 @@
+../Core/DRIVERS/adc/MyAdcDMA.c:3:29:channel_setup	6
+../Core/DRIVERS/adc/MyAdcDMA.c:17:20:adc_setuo	4
+../Core/DRIVERS/adc/MyAdcDMA.c:42:6:adc_dma_init	2

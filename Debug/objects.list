@@ -2,6 +2,7 @@
 "./Core/DRIVERS/MyTimer/MyTimer_IC.o"
 "./Core/DRIVERS/MyTimer/MyTimer_PWM.o"
 "./Core/DRIVERS/adc/MyAdc.o"
+"./Core/DRIVERS/adc/MyAdcDMA.o"
 "./Core/DRIVERS/dma/MyDMA.o"
 "./Core/DRIVERS/gpio/gpiox.o"
 "./Core/DRIVERS/hcsr04/MyHcsr04.o"

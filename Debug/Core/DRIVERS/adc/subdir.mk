@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/DRIVERS/adc/MyAdc.c 
+../Core/DRIVERS/adc/MyAdc.c \
+../Core/DRIVERS/adc/MyAdcDMA.c 
 
 OBJS += \
-./Core/DRIVERS/adc/MyAdc.o 
+./Core/DRIVERS/adc/MyAdc.o \
+./Core/DRIVERS/adc/MyAdcDMA.o 
 
 C_DEPS += \
-./Core/DRIVERS/adc/MyAdc.d 
+./Core/DRIVERS/adc/MyAdc.d \
+./Core/DRIVERS/adc/MyAdcDMA.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Core/DRIVERS/adc/%.o Core/DRIVERS/adc/%.su Core/DRIVERS/adc/%.cyclo: ../Core/DRI
 clean: clean-Core-2f-DRIVERS-2f-adc
 
 clean-Core-2f-DRIVERS-2f-adc:
-	-$(RM) ./Core/DRIVERS/adc/MyAdc.cyclo ./Core/DRIVERS/adc/MyAdc.d ./Core/DRIVERS/adc/MyAdc.o ./Core/DRIVERS/adc/MyAdc.su
+	-$(RM) ./Core/DRIVERS/adc/MyAdc.cyclo ./Core/DRIVERS/adc/MyAdc.d ./Core/DRIVERS/adc/MyAdc.o ./Core/DRIVERS/adc/MyAdc.su ./Core/DRIVERS/adc/MyAdcDMA.cyclo ./Core/DRIVERS/adc/MyAdcDMA.d ./Core/DRIVERS/adc/MyAdcDMA.o ./Core/DRIVERS/adc/MyAdcDMA.su
 
 .PHONY: clean-Core-2f-DRIVERS-2f-adc
 

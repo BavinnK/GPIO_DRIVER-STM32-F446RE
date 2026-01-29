@@ -57,7 +57,6 @@ static inline void clear_flags(DMA_Stream_TypeDef *stream){
 	else if(stream==DMA2_Stream7){
 		DMA2->HIFCR|=(1<<22)|(0b1111<<24);
 	}
-
 }
 void DMAx_init(DMA_TypeDef *DMAx,DMA_config_t* DMA_CONFIG){
 	DMA_config(DMAx);
